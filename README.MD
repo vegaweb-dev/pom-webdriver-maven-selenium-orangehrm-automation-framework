@@ -30,13 +30,13 @@
 
 - [x] **Phase 0: Dependency Management SetUp** Establish the Maven lifecycle, and dependency management in `pom.xml`.
 
-- [ ] **Phase 1: Project Scaffolding** Establish directory structure and package architecture.
+- [x] **Phase 1: Project Scaffolding** Establish directory structure and package architecture.
 
-- [ ] **Phase 2: Core Engine & Resilience** Develop the `DriverManager` and `BasePage`. Implementation of **Explicit Wait wrappers** to handle async DOM updates and eliminate flakiness.
+- [x] **Phase 2: Core Engine & Resilience** Develop the `DriverManager` and `BasePage`. Implementation of **Explicit Wait wrappers** to handle async DOM updates and eliminate flakiness.
 
-- [ ] **Phase 3: Smoke Test Validation** Execution of a baseline script to verify environment stability, Maven dependency resolution, and core WebDriver connectivity.
+- [x] **Phase 3: Smoke Test Validation** Execution of a baseline script to verify environment stability, Maven dependency resolution, and core WebDriver connectivity.
 
-- [ ] **Phase 4: Page Object Model (POM) Design** Map OrangeHRM business flows (Login, PIM, Admin) into decoupled, reusable Page Objects and Locators.
+- [x] **Phase 4: Page Object Model (POM) Design** Map OrangeHRM business flows (Login, PIM, Admin) into decoupled, reusable Page Objects and Locators.
 
 - [ ] **Phase 5: CI/CD Integration** Implementation of a GitHub Actions workflow to automate test execution on every Push or Pull Request
 
