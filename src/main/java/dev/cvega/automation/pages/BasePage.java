@@ -15,7 +15,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public abstract class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
-    int timeout = ConfigReader.getTimeout();
 
     protected BasePage(WebDriver driver) {
         this.driver = driver;
