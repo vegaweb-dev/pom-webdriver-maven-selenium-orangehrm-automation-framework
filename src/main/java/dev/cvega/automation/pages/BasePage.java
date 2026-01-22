@@ -1,6 +1,5 @@
 package dev.cvega.automation.pages;
 
-import dev.cvega.automation.config.ConfigReader;
 import dev.cvega.automation.constants.FrameworkConstants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
