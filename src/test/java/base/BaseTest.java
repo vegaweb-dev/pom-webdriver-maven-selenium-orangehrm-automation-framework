@@ -12,7 +12,7 @@ public abstract class BaseTest {
     @BeforeMethod
     public void setUp() {
         driver = DriverManager.getDriver();
-        driver.manage().window().maximize();
+        /*driver.manage().window().maximize();*/
         driver.get(FrameworkConstants.BASE_URL);
     }
 
