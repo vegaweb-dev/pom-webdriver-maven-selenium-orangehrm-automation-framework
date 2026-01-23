@@ -16,9 +16,12 @@ public class DashboardPage extends BasePage {
 
     public DashboardPage(WebDriver driver) {
         super(driver);
+        if (!isElementDisplayed(dashboardTitle)) {
+            throw new IllegalStateException("This is not the  Dashboard page. Current URL: " + driver.getCurrentUrl());
+        }
     }
 
-    public boolean isDashboardDisplayed(){
+    public boolean isDashboardDisplayed() {
         return isElementDisplayed(dashboardTitle);
     }
 
