@@ -1,6 +1,7 @@
 package dev.cvega.automation.pages.dashboard;
 
 import dev.cvega.automation.pages.BasePage;
+import dev.cvega.automation.pages.pim.PimPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -11,7 +12,7 @@ import org.openqa.selenium.WebDriver;
  */
 public class DashboardPage extends BasePage {
     private final By dashboardTitle = By.xpath("//h6[contains(@class, 'topbar-header') and text()='Dashboard']");
-    private final By pimButton = By.xpath("//aside[contains(@class,'sidepanel')]//a[contains(normalize-space(text()),'PIM')]");
+    private final By pimButton = By.xpath("//aside[contains(@class,'sidepanel')]//a[contains(normalize-space(.),'PIM')]");
     private final By pimTitle = By.xpath("//header[@class='oxd-topbar']//h6[contains(@class,'header') and contains(normalize-space(text()),'PIM')]");
 
     public DashboardPage(WebDriver driver) {
@@ -28,9 +29,11 @@ public class DashboardPage extends BasePage {
     /**
      * Selects the PIM button in the sidebar and performs click.
      * Uses BasePage wait methods to ensure element is visible and clickable.
+     * @return PimPage.
      */
-    public void navigateToPim() {
+    public PimPage navigateToPim() {
         click(this.pimButton);
+        return new PimPage(driver);
     }
 
     /**
