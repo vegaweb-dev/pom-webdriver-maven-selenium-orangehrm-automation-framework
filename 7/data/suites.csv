@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","3491","testSuccessfulLogin","Surefire suite","Tue Jan 27 23:41:46 UTC 2026","passed","Tue Jan 27 23:41:50 UTC 2026","tests.login.LoginTest","Surefire test","tests.login.LoginTest","testSuccessfulLogin"
+"","7590","navigateFromDashboardToPim_shouldDisplayPimPage","Surefire suite","Tue Jan 27 23:41:37 UTC 2026","passed","Tue Jan 27 23:41:45 UTC 2026","tests.dashboard.DashboardToPinNavigationTest","Surefire test","tests.dashboard.DashboardToPinNavigationTest","navigateFromDashboardToPim_shouldDisplayPimPage"
