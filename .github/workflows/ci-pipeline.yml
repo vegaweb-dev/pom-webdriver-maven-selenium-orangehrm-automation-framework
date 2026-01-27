@@ -2,6 +2,11 @@ on:
   push:
     branches: [ main ]
   pull_request:
+# Setup permission according to GitHub Actions docs: https://docs.github.com/en/actions/tutorials/authenticate-with-github_token
+permissions:
+  # Required for 'peaceiris/actions-gh-pages' to push the HTML report to the gh-pages branch.   contents: write
+  pull-requests: write
+  checks: write
 
 jobs:
   build:
@@ -18,7 +23,8 @@ jobs:
           java-version: '21'
 
       - name: Build and Test with Maven
-        run: mvn clean test
+        # Garantees the report even if test fails. https://maven.apache.org/components/surefire-archives/surefire-3.2.5/maven-surefire-plugin/test-mojo.html
+        run: mvn clean test -Dmaven.test.failure.ignore=true
 
       - name: Upload Allure results
         if: always()
@@ -26,3 +32,39 @@ jobs:
         with:
           name: allure-results
           path: target/allure-results
+
+      # Allure Report Generation: Maps 'target/allure-results' (Maven standard)
+      # and links it with gh-pages history to enable trend charts and historical data.
+      - name: Test marketplace action
+        uses: simple-elf/allure-report-action@master
+        # 'if: always()' ensures the report is generated even if tests fail,
+        # facilitating Root Cause Analysis (RCA) directly from the dashboard.
+        if: always()
+        id: allure-report
+        with:
+          allure_results: target/allure-results
+          gh_pages: gh-pages
+          allure_report: allure-report
+          allure_history: allure-history
+
+      # Automated Deployment: Publishes the 'allure-history' folder to GitHub Pages,
+      # making the report accessible via a public URL after every run.
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
+
+      - name: Post the link to the report
+        if: always()
+        uses: Sibz/github-status-action@v1
+        with:
+          authToken: ${{ secrets.GITHUB_TOKEN }}
+          context: 'Test report'
+          state: 'success'
+          # Publishes the report URL as a GitHub Status Check.
+          # Logic: Uses PR head SHA if available to ensure the link appears in the PR 'Checks' tab.
+          sha: ${{ github.event.pull_request.head.sha || github.sha }}
+          target_url: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{ github.run_number }}
