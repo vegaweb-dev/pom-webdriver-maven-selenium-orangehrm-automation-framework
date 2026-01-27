@@ -4,7 +4,8 @@ on:
   pull_request:
 # Setup permission according to GitHub Actions docs: https://docs.github.com/en/actions/tutorials/authenticate-with-github_token
 permissions:
-  # Required for 'peaceiris/actions-gh-pages' to push the HTML report to the gh-pages branch.   contents: write
+  # Required for 'peaceiris/actions-gh-pages' to push the HTML report to the gh-pages branch.
+  contents: write
   pull-requests: write
   checks: write
 
