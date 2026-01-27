@@ -38,7 +38,7 @@
 
 - [x] **Phase 4: Page Object Model (POM) Design** Map OrangeHRM business flows (Login, PIM, Admin) into decoupled, reusable Page Objects and Locators.
 
-- [ ] **Phase 5: CI/CD Integration** Implementation of a GitHub Actions workflow to automate test execution on every Push or Pull Request
+- [x] **Phase 5: CI/CD Integration** Implementation of a GitHub Actions workflow to automate test execution on every Push or Pull Request
 
 - [ ] **Phase 6: Advanced Reporting & Observability** Integrate **Allure Framework** with custom TestNG Listeners for automated screenshot capture and failure traceability.
 
