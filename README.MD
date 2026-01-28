@@ -40,7 +40,7 @@
 
 - [x] **Phase 5: CI/CD Integration** Implementation of a GitHub Actions workflow to automate test execution on every Push or Pull Request
 
-- [ ] **Phase 6: Advanced Reporting & Observability** Integrate **Allure Framework** with custom TestNG Listeners for automated screenshot capture and failure traceability.
+- [x] **Phase 6: Advanced Reporting & Observability** Integrate **Allure Framework** with custom TestNG Listeners for automated screenshot capture and failure traceability.
 
 - [ ] **Phase 7: Future Enhancements & Scalability** Implementation and expanded test coverage for edge-case business flows.
 
